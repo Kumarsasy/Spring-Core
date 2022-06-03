@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="helloTuneServiceObj" class="com.spring.sim.HelloTuneService" />
+	<bean id="missedCallServiceObj" class="com.spring.sim.MissedCallAlertService" />
+	<bean id="dataServiceObj" class="com.spring.sim.DataService" />
+	
+<!-- 	<bean id="airtel" class="com.spring.sim.Airtel">
+		<property name="service" ref="helloTuneServiceObj" ></property>	
+	</bean> -->
+	
+	<bean id="airtel" class="com.spring.sim.Airtel">
+		<constructor-arg name="service" ref="dataServiceObj" ></constructor-arg>	
+	</bean>
+		
+	
+	
+
+</beans>
